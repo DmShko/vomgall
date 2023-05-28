@@ -1,0 +1,126 @@
+:root {
+    --body-color: #95a6db;
+    --text-color: #13184b;
+}
+
+/*reset*/
+.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.link {  
+    text-decoration: none;
+}
+
+.img-block{
+    /* reset empty space beetwen images */
+    display: block;
+    max-width: 100%;
+    /* height: auto; */
+}
+h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+}
+/*reset/*/
+
+/* hidden */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
+/* Width size of windows 320px + */
+.container {
+    min-width: 320px;
+    max-width: 428px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-left: auto;
+    margin-right: auto;
+
+    outline: 2px solid red; 
+}
+
+@media only screen and (min-width: 428px){
+    .container {    
+        max-width: 428px;
+    }
+}
+
+@media only screen and (min-width: 768px){
+    .container {    
+        max-width: 768px;
+    }
+}
+
+@media only screen and (min-width: 1200px){
+    .container {    
+        max-width: 1200px;
+    }
+}
+
+.section {
+    padding: 50px 0;
+}
+
+/*==========BODY=============*/
+body {
+    font-family: 'Cinzel+Decorative';
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em; 
+    color: var( --text-color);
+    background-color:var(--body-color);
+}
+/*         /BODY             */
+
+/*==========HEADER=============*/
+.page-header {
+    position: fixed;
+    height: 50px;
+    width: 100vw;
+
+    backdrop-filter: blur(2px);
+    background-color: rgba(233, 233, 233, 0.5);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    box-shadow:0px 2px 1px rgba(16, 16, 24, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+
+    padding: 10px 0;
+}
+
+.nav-list-one {
+    display: none;
+}
+
+.nav-list-two {
+    display: none;
+}
+
+.page-logo {
+    filter: none; 
+}
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: #bfc1c7;
+   
+    height: 30px;
+    padding-left: calc((100vw - 100%) / 2);
+    padding-right: calc((100vw - 100%) / 2);
+}
+/*         /HEADER             */
