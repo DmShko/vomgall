@@ -1,6 +1,10 @@
 :root {
-    --body-color: #95a6db;
-    --text-color: #13184b;
+    --body-color: #8398d6;
+    --text-out-color: #000000;
+    --container-color: #ced7f1;
+    --text-color: rgba(255, 255, 255, 0.8);
+    --color-white: #FFF;
+    --button-color:#bfc1c7;
 }
 
 /*reset*/
@@ -11,6 +15,14 @@
 }
 .link {  
     text-decoration: none;
+}
+
+.button {
+    border: none;
+    border-radius: 4px;
+    background-color: var(--button-color);
+    width: 100px;
+    height: 30px;
 }
 
 .img-block{
@@ -47,8 +59,11 @@ h1,h2,h3,h4,h5,h6,p{
     padding-right: 30px;
     margin-left: auto;
     margin-right: auto;
-
-    outline: 2px solid red; 
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+    background-color:var(--container-color);
+    /* outline: 2px solid red;  */
 }
 
 @media only screen and (min-width: 428px){
@@ -76,12 +91,13 @@ h1,h2,h3,h4,h5,h6,p{
 /*==========BODY=============*/
 body {
     font-family: 'Cinzel+Decorative';
-    font-weight: 400;
+    font-weight: 700;
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em; 
     color: var( --text-color);
-    background-color:var(--body-color);
+
+    background-color:var(--container-color);
 }
 /*         /BODY             */
 
@@ -92,11 +108,11 @@ body {
     width: 100vw;
 
     backdrop-filter: blur(2px);
-    background-color: rgba(233, 233, 233, 0.5);
-    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    background-color: transparent;
+    border-top: 5px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 5px solid rgba(255, 255, 255, 0.2);
     box-shadow:0px 2px 1px rgba(16, 16, 24, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
-
-    padding: 10px 0;
+    padding: 5px 0;
 }
 
 .nav-list-one {
@@ -111,16 +127,133 @@ body {
     filter: none; 
 }
 
+.address {
+    display: none;
+}
+
 .header-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 
-    background-color: #bfc1c7;
-   
+    background-color: var(--button-color);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    border-radius: 4px;
+
     height: 30px;
-    padding-left: calc((100vw - 100%) / 2);
-    padding-right: calc((100vw - 100%) / 2);
+    
+}
+
+.menu-button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    width: 24px;
+    height: 24px;
+    border-color:  rgba(255, 255, 255, 0.8);
+    padding: 0 2px;
+}
+
+.menu-button-icon {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    fill: rgba(255, 255, 255, 0.8);
+ }
+
+.page-logo {
+    color: rgb(255, 255, 255, 0.8);
 }
 /*         /HEADER             */
+
+/*===========MAIN==============*/
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-title, .oil-title,
+.watercolor-title, .digital-title,
+.mix-title, .review-title {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+/* .oil {
+    background-color: var(--basic-color);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7),  rgba(46, 47, 66, 0.7)), url(../images/oil-container-img/oil-for-my-site.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+} */
+
+.art-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.oil-link {
+    width: 100%;
+    height: 200px;
+    background-color: var(--basic-color);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.3),  rgba(46, 47, 66, 0.7)), url(../images/oil-img/oil-for-my-site.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 6px;
+    
+}
+
+.oil-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 30px;
+    box-shadow:0px 5px 1px rgba(16, 16, 24, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
+.oil-title, .watercolor-title {
+ 
+    margin-bottom: 10px;
+}
+
+/* .oil-link {
+    border-radius: 4px  ;
+} */
+
+
+/* .oil-img {
+    border-radius: 6px;
+} */
+
+.watercolor-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 30px;
+    box-shadow:0px 5px 1px rgba(16, 16, 24, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
+.watercolor-link {
+    width: 100%;
+    height: 200px;
+    background-color: var(--basic-color);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.3),  rgba(46, 47, 66, 0.7)), url(../images/beetle-img/beetle-for-my-site.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 6px;
+}
+/*         /MAIN             */
