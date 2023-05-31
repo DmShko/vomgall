@@ -3,8 +3,11 @@
     --text-out-color: #000000;
     --container-color: #ced7f1;
     --text-color: rgba(255, 255, 255, 0.8);
+    --section-color: rgba(255, 255, 255);
     --color-white: #FFF;
     --button-color:#bfc1c7;
+    --main-text-color: rgb(97, 66, 238);
+    --hover-link-color: rgba(255, 255, 255, 0.8);
 }
 
 /*reset*/
@@ -37,6 +40,17 @@ h1,h2,h3,h4,h5,h6,p{
 }
 /*reset/*/
 
+/* hover and focus */
+.page-logo:focus, .nav-list-one-link:focus,
+.nav-list-two-link:focus, .address-link:focus {
+    color: var(--hover-link-color);
+}
+
+.page-logo:hover, .nav-list-one-link:hover,
+.nav-list-two-link:hover, .address-link:hover {
+    color: rgba(207, 255, 73, 0.7);
+}
+
 /* hidden */
 .visually-hidden {
     position: absolute;
@@ -63,7 +77,7 @@ h1,h2,h3,h4,h5,h6,p{
     padding-top: 10px;
     padding-bottom: 10px;
     
-    background-color:var(--container-color);
+
     /* outline: 2px solid red;  */
 }
 
@@ -98,7 +112,7 @@ body {
     letter-spacing: 0.02em; 
     color: var(--text-color);
 
-    background-color:var(--container-color);
+    background-image:url(../images/body-background/pawel-czerwinski-oykbZuvajO0-unsplash.jpg);
 }
 /*         /BODY             */
 
@@ -114,6 +128,12 @@ body {
     border-bottom: 5px solid rgba(255, 255, 255, 0.2);
     box-shadow:0px 2px 1px rgba(16, 16, 24, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
     padding: 5px 0;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.is-hover {
+    background-color: rgba(175, 235, 11, 0.5);
 }
 
 .page-nav {
@@ -145,6 +165,7 @@ body {
 
 .nav-list-one {
     display: none;
+    transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media only screen and (min-width: 428px){
@@ -177,10 +198,14 @@ body {
     }
 }
 
+.nav-one-item {
+    align-items: center;
+}
+
 .nav-list-one-link,
 .nav-list-two-link,
 .address-link {
-    color: rgb(97, 66, 238);
+    color: var(--main-text-color);
     padding-left: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -188,6 +213,7 @@ body {
 
 .nav-list-two {
     display: none;
+    transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media only screen and (min-width: 428px){
@@ -224,6 +250,7 @@ body {
 
 .address {
     display: none;
+    transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @media only screen and (min-width: 428px){
@@ -257,8 +284,12 @@ body {
     box-shadow:0px 2px 1px rgba(16, 16, 24, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 
     height: 30px;
-    
+    transition: background-color 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.is-border {
+    outline: 3px solid rgba(207, 255, 73, 0.7);
+ }
 
 .menu-button {
     display: flex;
@@ -311,6 +342,7 @@ body {
 
 .page-logo {
     color: rgb(255, 255, 255, 0.8);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*         /HEADER             */
@@ -331,10 +363,13 @@ body {
 .watercolor-title, .digital-title,
 .mix-title, .review-title {
     font-weight: 700;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 1.5;
+
+    color: var(--section-color);
     text-align: center;
     text-transform: capitalize;
+    text-shadow:0px 2px 1px rgb(97, 66, 238, 0.08), 0px 1px 1px rgb(97, 66, 238, 0.16), 0px 1px 6px rgb(97, 66, 238, 0.08);
 }
 
 .hero-text {
@@ -357,7 +392,7 @@ body {
     width: 100%;
     height: 200px;
     background-color: var(--basic-color);
-    background-image: linear-gradient(rgba(46, 47, 66, 0.3),  rgba(46, 47, 66, 0.7)), url(../images/oil-img/oil-for-my-site.jpg);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.3),  rgba(46, 47, 66, 0.4)), url(../images/oil-img/oil-for-my-site.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -372,10 +407,12 @@ body {
     flex-direction: column;
     justify-content: center;
     margin-bottom: 30px;
+    background-color:var(--container-color);
     box-shadow:0px 5px 1px rgba(16, 16, 24, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
-.oil-title, .watercolor-title {
+.oil-title, .watercolor-title,
+.mix-title, .digital-title {
  
     margin-bottom: 10px;
 }
@@ -384,7 +421,7 @@ body {
     width: 100%;
     height: 200px;
     background-color: var(--basic-color);
-    background-image: linear-gradient(rgba(46, 47, 66, 0.3),  rgba(46, 47, 66, 0.7)), url(../images/beetle-img/beetle-for-my-site.jpg);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.3),  rgba(46, 47, 66, 0.4)), url(../images/beetle-img/beetle-for-my-site.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -395,7 +432,7 @@ body {
     width: 100%;
     height: 200px;
     background-color: var(--basic-color);
-    background-image: linear-gradient(rgba(46, 47, 66, 0.3),  rgba(46, 47, 66, 0.7)), url(../images/digital-icon/digital-for-may-site.jpg);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.3),  rgba(46, 47, 66, 0.4)), url(../images/digital-icon/digital-for-may-site.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -406,10 +443,26 @@ body {
     width: 100%;
     height: 200px;
     background-color: var(--basic-color);
-    background-image: linear-gradient(rgba(46, 47, 66, 0.3),  rgba(46, 47, 66, 0.7)), url(../images/mix-icon/mix-for-my-site.jpg);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.3),  rgba(46, 47, 66, 0.4)), url(../images/mix-icon/mix-for-my-site.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     border-radius: 6px;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--main-text-color);
+}
+
+.page-footer {
+    width: 100vw;
+
+    backdrop-filter: blur(2px);
+    background-color: rgba(255, 255, 255, 0.3);
 }
 /*         /MAIN             */
