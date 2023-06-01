@@ -23,22 +23,22 @@
     <header class="page-header" change-color>
         <div class="header-container container" change-border>
             <nav class="page-nav">
-                <a class="page-logo link" href="" hover-focus>VomGall</a>
+                <a class="page-logo link" href="./index.html" hover-focus>VomGall</a>
                 <ul class="nav-list-one list">
                     <li class="nav-one-item">
-                        <a class="nav-list-one-link link" href="" oil-focus>Oil</a>
+                        <a class="nav-list-one-link link" href="#oil-block" oil-focus>Oil</a>
                     </li>
 
                     <li class="nav-one-item">
-                        <a class="nav-list-one-link link" href="" watercolor-focus>Watercolor</a>
+                        <a class="nav-list-one-link link" href="#watercolor-block" watercolor-focus>Watercolor</a>
                     </li>
 
                     <li class="nav-one-item">
-                        <a class="nav-list-one-link link" href="" digital-focus>Digital</a>
+                        <a class="nav-list-one-link link" href="#digital-block" digital-focus>Digital</a>
                     </li>
 
                     <li class="nav-one-item">
-                        <a class="nav-list-one-link link" href="" mix-focus>Mix</a>
+                        <a class="nav-list-one-link link" href="#mix-block" mix-focus>Mix</a>
                     </li>
                 </ul>
 
@@ -55,7 +55,9 @@
             <address class="address">
                 <a class="address-link link" href="" address-focus>vomgall@gmail.com</a>
             </address> 
-            <button class="menu-button button">
+            <button class="menu-button button js-open-menu" 
+            aria-expanded="false"
+            aria-controls="mobile-menu" menu-button-focus>
                 <svg class="menu-button-icon" width="22" height="22">
                     <use href="./images/icons.svg#icon-menu-icon"></use>
                   </svg>
@@ -79,25 +81,25 @@
             <!-- Art -->
             <section class="section">
                 <div class="art-container container">
-                    <h2 class="oil-title">Oil peinter</h2>
+                    <h2 class="oil-title" id="oil-block">Oil peinter</h2>
                     <div class="container oil-container">
                         <a class="oil-link link" href=""></a>
                     </div>
             
                     <!-- Watercolor -->
-                    <h2 class="watercolor-title">Watercolor peinter</h2>
+                    <h2 class="watercolor-title" id="watercolor-block">Watercolor peinter</h2>
                     <div class="container watercolor-container">
                         <a class="watercolor-link link" href=""></a>
                     </div>
         
                     <!-- Digital -->
-                    <h2 class="digital-title">Digital peinter</h2>
+                    <h2 class="digital-title" id="digital-block">Digital peinter</h2>
                     <div class="container digital-container">
                         <a class="digital-link link" href=""></a>
                     </div>
         
                     <!-- Mix -->
-                    <h2 class="mix-title">Mix</h2>
+                    <h2 class="mix-title" id="mix-block">Mix</h2>
                     <div class="container mix-container">
                         <a class="mix-link link" href=""></a>
                     </div>
@@ -122,6 +124,44 @@
             <a class="footer-link link" href=""></a>
         </div>
     </footer>
+
+    <!-- Mobile menu -->
+    <div class="menu-container js-menu-container" id="mobile-menu">
+        <nav class="mobile-page-nav">
+            <ul class="mobile-nav-list-one list">
+                <li class="mobile-nav-one-item">
+                    <a class="mobile-nav-list-one-link link" href="#oil-block" oil-focus>Oil</a>
+                </li>
+
+                <li class="mobile-nav-one-item">
+                    <a class="mobile-nav-list-one-link link" href="#watercolor-block" watercolor-focus>Watercolor</a>
+                </li>
+
+                <li class="mobile-nav-one-item">
+                    <a class="mobile-nav-list-one-link link" href="#digital-block" digital-focus>Digital</a>
+                </li>
+
+                <li class="mobile-nav-one-item">
+                    <a class="mobile-nav-list-one-link link" href="#mix-block" mix-focus>Mix</a>
+                </li>
+            </ul>
+
+            <ul class="mobile-nav-list-two list">
+                <li class="mobile-nav-two-item">
+                    <a class="mobile-nav-list-two-link link" href="" about-focus>About</a>
+                </li>
+                <li class="mobile-nav-two-item">
+                    <a class="mobile-nav-list-two-link link" href="" contacts-focus>Contacts</a>
+                </li>
+            </ul>
+        </nav> 
+
+        <address class="mobile-address">
+            <a class="mobile-address-link link" href="" address-focus>vomgall@gmail.com</a>
+        </address> 
+    </div>
+
     <script src="./js/main.js"></script>
+    <script defer src="./js/mobile-menu.js"></script>
 </body>
 </html>

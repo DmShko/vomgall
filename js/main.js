@@ -11,6 +11,8 @@
 
       addressLimkHoverFocus: document.querySelector("[address-focus]"),
 
+      menuButtonLimkHoverFocus: document.querySelector("[menu-button-focus]"),
+
       header: document.querySelector("[change-color]"),
 
       nav: document.querySelector("[change-border]"),
@@ -35,6 +37,9 @@
 
     refs.addressLimkHoverFocus.addEventListener("mouseover", toggleModal);
     refs.addressLimkHoverFocus.addEventListener("mouseout", toggleModal);
+
+    refs.menuButtonLimkHoverFocus.addEventListener("mouseover", toggleModal);
+    refs.menuButtonLimkHoverFocus.addEventListener("mouseout", toggleModal);
   
     function toggleModal() {
       refs.header.classList.toggle("is-hover");
