@@ -1,18 +1,13 @@
 (() => {
     const refs = {
-      openModalOilLink: document.querySelector("[data-modal-open-oil]"),
-      openModalWatercolorLink: document.querySelector("[data-modal-open-watercolor]"),
-      openModalDigitalLink: document.querySelector("[data-modal-open-digital]"),
-      openModalMixLink: document.querySelector("[data-modal-open-mix]"),
-      
+      openModalAboutLink: document.querySelector("[data-modal-about-open]"),
+      openModalComtactsLink: document.querySelector("[data-modal-contacts-open]"),
       closeModalBtn: document.querySelector("[data-modal-close]"),
       modal: document.querySelector("[data-modal]"),
     };
   
-    refs.openModalOilLink.addEventListener("click", toggleModal);
-    refs.openModalWatercolorLink.addEventListener("click", toggleModal);
-    refs.openModalDigitalLink.addEventListener("click", toggleModal);
-    refs.openModalMixLink.addEventListener("click", toggleModal);
+    refs.openModalAboutLink.addEventListener("click", toggleModal);
+    refs.openModalComtactsLink.addEventListener("click", toggleModal);
     refs.closeModalBtn.addEventListener("click", toggleModal);
   
     function toggleModal() {
