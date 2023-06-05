@@ -135,4 +135,31 @@ body {
 
 .gallery-all-container {
     padding-top: 50px;
+    margin-bottom: 30px;
+
+}
+
+.gallery-oil-container {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 30px; 
+    
+    justify-content: space-between;
+}
+
+.gallery-watercolor-container {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 30px;
+    
+    justify-content: space-between;
+}
+
+.gallery-all-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.is-hidden {
+    display: none;
 }

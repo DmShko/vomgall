@@ -5,6 +5,14 @@
       watercolorLimkHoverFocus: document.querySelector("[watercolor-focus]"),
       digitalLimkHoverFocus: document.querySelector("[digital-focus]"),
       mixLimkHoverFocus: document.querySelector("[mix-focus]"),
+      
+      //gallery container hidden
+      lockAboutOilLink: document.querySelector("[lock-about-oil]"),
+      lockAboutWatercolorLink: document.querySelector("[lock-about-watercolor]"),
+
+      oil: document.querySelector("[hidden-watercolor]"),
+      watercolor: document.querySelector("[hidden-oil]"),
+       //gallery container hidden
 
       aboutLimkHoverFocus: document.querySelector("[about-focus]"),
       contactsLimkHoverFocus: document.querySelector("[contacts-focus]"),
@@ -18,6 +26,11 @@
       nav: document.querySelector("[change-border]"),
     };
   
+    //gallery container hidden
+    refs.lockAboutOilLink.addEventListener("click", toggleGalleryOil);
+    refs.lockAboutWatercolorLink.addEventListener("click", toggleGalleryWatercolor);
+    //gallery container hidden
+
     refs.headerLimkHoverFocus.addEventListener("mouseover", toggleModal);
     refs.headerLimkHoverFocus.addEventListener("mouseout", toggleModal);
     refs.oilLimkHoverFocus.addEventListener("mouseover", toggleModal);
@@ -44,6 +57,13 @@
     function toggleModal() {
       refs.header.classList.toggle("is-hover");
       refs.nav.classList.toggle("is-border");
-      // document.getElementById("demo").style.backgroundColor = "green";
+    }
+
+    function toggleGalleryOil() {
+      refs.watercolor.classList.toggle("is-hidden");
+    }
+
+    function toggleGalleryWatercolor() {
+      refs.oil.classList.toggle("is-hidden");
     }
   })();

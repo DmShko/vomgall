@@ -417,7 +417,7 @@ body {
     width: 100%;
     height: 200px;
     background-color: var(--basic-color);
-    background-image: linear-gradient(rgba(46, 47, 66, 0.3),  rgba(46, 47, 66, 0.4)), url(../images/oil-img/oil-for-my-site.jpg);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.3),  rgba(46, 47, 66, 0.4)), url(../images/oil-opt/IMG_oil@1x.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -475,7 +475,7 @@ body {
     width: 100%;
     height: 200px;
     background-color: var(--basic-color);
-    background-image: linear-gradient(rgba(46, 47, 66, 0.3),  rgba(46, 47, 66, 0.4)), url(../images/beetle-img/beetle-for-my-site.jpg);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.3),  rgba(46, 47, 66, 0.4)), url(../images/watercolor-opt/beetle-for-my-site@1x.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -486,7 +486,7 @@ body {
     width: 100%;
     height: 200px;
     background-color: var(--basic-color);
-    background-image: linear-gradient(rgba(46, 47, 66, 0.3),  rgba(46, 47, 66, 0.4)), url(../images/digital-img/digital-for-may-site.jpg);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.3),  rgba(46, 47, 66, 0.4)), url(../images/digital-opt/digital-for-may-site@1x.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -497,7 +497,7 @@ body {
     width: 100%;
     height: 200px;
     background-color: var(--basic-color);
-    background-image: linear-gradient(rgba(46, 47, 66, 0.3),  rgba(46, 47, 66, 0.4)), url(../images/mix-img/mix-for-my-site.jpg);
+    background-image: linear-gradient(rgba(46, 47, 66, 0.3),  rgba(46, 47, 66, 0.4)), url(../images/mix-opt/mix-for-my-site@1x.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
