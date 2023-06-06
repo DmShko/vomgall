@@ -1,4 +1,12 @@
+export {keysHidden};
+
 (() => {
+
+    let keysHidden = {
+      oil: false,
+      watercolor: false,
+    }
+
     const refs = {
       headerLimkHoverFocus: document.querySelector("[hover-focus]"),
       oilLimkHoverFocus: document.querySelector("[oil-focus]"),
@@ -9,9 +17,6 @@
       //gallery container hidden
       lockAboutOilLink: document.querySelector("[lock-about-oil]"),
       lockAboutWatercolorLink: document.querySelector("[lock-about-watercolor]"),
-
-      oil: document.querySelector("[hidden-watercolor]"),
-      watercolor: document.querySelector("[hidden-oil]"),
        //gallery container hidden
 
       aboutLimkHoverFocus: document.querySelector("[about-focus]"),
@@ -60,10 +65,14 @@
     }
 
     function toggleGalleryOil() {
-      refs.watercolor.classList.toggle("is-hidden");
+      
+      keysHidden.oil = true;
+      // refs.watercolor.classList.toggle("is-hidden");
     }
 
     function toggleGalleryWatercolor() {
-      refs.oil.classList.toggle("is-hidden");
+      keysHidden.watercolor = true;
+      // refs.oil.classList.toggle("is-hidden");
     }
+
   })();
