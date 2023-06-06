@@ -1,4 +1,4 @@
-import {keysHidden} from './main.js';
+import keysHidden from './main.js';
 
 (() => {
 
