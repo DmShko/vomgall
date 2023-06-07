@@ -1,9 +1,10 @@
 
 (() => {
-  let keysHidden = {
-  oil: false,
-  watercolor: false,
-  }; 
+
+  // let keysHidden = {
+  //   oil: false,
+  //   watercolor: false,
+  // }; 
 
   const refs = {
     headerLimkHoverFocus: document.querySelector("[hover-focus]"),
@@ -27,6 +28,10 @@
     header: document.querySelector("[change-color]"),
 
     nav: document.querySelector("[change-border]"),
+
+    oil: document.querySelector("[hidden-watercolor]"),
+
+    watercolor: document.querySelector("[hidden-oil]"),
   };
     
   //gallery container hidden
@@ -65,14 +70,11 @@
   function toggleGalleryOil() {
       
     keysHidden.oil = true;
-    // refs.watercolor.classList.toggle("is-hidden");
+    refs.watercolor.classList.toggle("is-hidden");
   }
 
   function toggleGalleryWatercolor() {
     keysHidden.watercolor = true;
-    // refs.oil.classList.toggle("is-hidden");
+    refs.oil.classList.toggle("is-hidden");
   }
-}
-)();
-
-export default keysHidden;
+})();

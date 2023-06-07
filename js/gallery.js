@@ -1,14 +1,16 @@
-import keysHidden from './main.js';
+// import keysHidden from './main.js';
 
 (() => {
 
     const gall = {
-        oil: document.querySelector("[hidden-watercolor]"),
-        watercolor: document.querySelector("[hidden-oil]"),
+        galloil: document.querySelector("[hidden-watercolor]"),
+        gallwatercolor: document.querySelector("[hidden-oil]"),
     };
 
-    if(keysHidden.oil === true) {
-        gall.oil.classList.toggle("is-hidden");
-    }
+    // if(keysHidden.oil === true) {
+    //     gall.gallwatercolor.classList.toggle("is-hidden");
+    // }else if(keysHidden.watercolor === true) {
+    //     gall.galloil.classList.toggle("is-hidden");
+    // }
 
 })();
