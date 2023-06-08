@@ -5,7 +5,7 @@
     --text-color: rgba(255, 255, 255, 0.8);
     --section-color: rgba(255, 255, 255);
     --color-white: #FFF;
-    --button-color:#bfc1c7;
+    --button-color:rgb(191, 193, 199);
     --main-text-color: rgb(97, 66, 238);
     --hover-link-color: rgba(255, 255, 255, 0.8);
 }
@@ -154,6 +154,16 @@ body {
 .gallery-all-title {
     text-align: center;
     margin-bottom: 30px;
+}
+
+.gallery-oil-link,
+.gallery-watercolor-link,
+.gallery-digital-link,
+.gallery-mix-link {
+    padding: 40px;
+    background-color:rgb(191, 193, 199, 0.8);
+    
+    border-radius: 7px;
 }
 
 .is-hidden {
