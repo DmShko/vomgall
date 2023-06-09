@@ -40,6 +40,30 @@ h1,h2,h3,h4,h5,h6,p{
 }
 /*reset/*/
 
+/* hover and focus */
+.gallery-page-logo:focus, .gallery-address-link:focus {
+    color: var(--hover-link-color);
+}
+
+.gallery-page-logo:hover, .gallery-address-link:hover {
+    color: rgba(207, 255, 73, 0.7);
+}
+
+/* hidden */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
 /* Width size of windows 320px + */
 .container {
     min-width: 320px;
@@ -169,3 +193,12 @@ body {
 .is-hidden {
     display: none;
 }
+
+.is-hover {
+    background-color: rgba(222, 255, 73, 0.5);
+}
+
+.is-border {
+    outline: 3px solid rgba(222, 255, 73, 0.7);
+ }
+ 
