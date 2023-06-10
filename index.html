@@ -73,7 +73,7 @@
                 <h1 class="hero-title">My hobby</h1>
                 <div class="container hero-container">
                     <p class="hero-text">
-                        Hi! My name is Dmytro. I want to tell you about my art hobby on this page. I'm not a professional painter. But I constantly want to develop and I dream that I will achieve good results. You can leave a comments in 'Leave a review' section. Have a nice day! And thank all!
+                        I want to tell you about my art hobby on this page. I'm not a professional painter. But I constantly want to develop and I dream that I will achieve good results. You can leave a comments in 'Leave a review' section. Have a nice day! And thank all!
                     </p>
                 </div>
             </section>
@@ -110,7 +110,9 @@
             <!-- Leave a review -->
             <section class="section">
                 <h2 class="review-title">Leave a review</h2>
-                <div class="container review-container">    
+                <div class="container review-container">  
+                    <textarea class="review-textarea" name="user-comment" id="user-comment" placeholder="Enter feedback here"></textarea>  
+                    <button class="review-send-button" type="submit">Send</button>
                 </div>
             </section>
         </div>
@@ -131,10 +133,26 @@
             <button class="backdrop-close" type="button" data-modal-close>
                 <svg class="close-icon" width="12px" height="12px">
                   <use href="./images/icons.svg#icon-close-modal-menu"></use>
-                </svg>
+                </svg> 
             </button>
             <div class="modal-container">
-                
+                <h2 class="modal-title">About</h1>
+                <div class="modal-card">
+                       
+                    <p class="modal-text"> <img class="modal-img img-block" 
+                        srcset="
+                        ./images/my-foto-opt/my-foto@2x.jpg 195w,
+                        ./images/my-foto-opt/my-foto@2x.jpg 390w
+                        "
+                        sizes="(min-width: 1158px) 195w, (min-width: 768px) 195w, (min-width: 428px) 195w, 100vw"
+                        src="./images/my-foto-opt/my-foto@2x" alt="UI Designer Daniel Wilson" height="260" width="264"
+                    />Hello! My name is Dmitry. I have many hobbies, including painting. 
+                        Since childhood, I dreamed of learning to draw professionally, because
+                         I knew that then I would be happy. That's exactly what happens. 
+                         I could not become an artist at the level of famous masters. 
+                         However, I am happy when I do it again and again. 
+                         I sincerely thank the artist Olga Vlasova, who at a certain stage helped to improve my technical level. </p>
+                </div>
             </div>    
         </div>
     </div>
