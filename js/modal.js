@@ -14,6 +14,7 @@
   
     function toggleModal() {
       refs.modal.classList.toggle("is-hidden");
+
       if(!refs.modalContentAbout.classList.contains("is-about")) {
         refs.modalContentAbout.classList.toggle("is-about");
       }
@@ -24,13 +25,11 @@
 
     function toggleModalAbout() {
       refs.modal.classList.toggle("is-hidden");
-      // refs.modalContentContacts.classList.toggle("is-contacts");
       refs.modalContentAbout.classList.toggle("is-about");
     }
 
     function toggleModalContacts() {
       refs.modal.classList.toggle("is-hidden");
-      // refs.modalContentAbout.classList.toggle("is-about");
       refs.modalContentContacts.classList.toggle("is-contacts");
     }
   })();
