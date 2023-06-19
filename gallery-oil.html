@@ -36,7 +36,7 @@
 
             <!-- gallery oil -->
             <div class="gallery-oil-container">
-                <a class="gallery-oil-link" href="#">
+                <a class="gallery-oil-link" href="#" oil-click-images>
                         <img class="gallery-img img-block" 
                         srcset="
                         ./images/oil-opt/flowers@2x.jpg 264w,
@@ -47,7 +47,7 @@
                     />
                 </a>
 
-                <a class="gallery-oil-link" href="#">
+                <a class="gallery-oil-link" href="#" oil-click-images>
                         <img class="gallery-img img-block" 
                         srcset="
                         ./images/oil-opt/hotyn@2x.jpg 264w,
@@ -58,7 +58,7 @@
                     />
                 </a>
 
-                <a class="gallery-oil-link" href="#">
+                <a class="gallery-oil-link" href="#" oil-click-images>
                         <img class="gallery-img img-block" 
                         srcset="
                         ./images/oil-opt/rowan@2x.jpg 264w,
@@ -69,7 +69,7 @@
                     />
                 </a>
 
-                <a class="gallery-oil-link" href="#">
+                <a class="gallery-oil-link" href="#" oil-click-images>
                         <img class="gallery-img img-block" 
                         srcset="
                         ./images/oil-opt/winter-third@2x.jpg 264w,
@@ -80,7 +80,7 @@
                     />
                 </a>
 
-                <a class="gallery-oil-link" href="#">
+                <a class="gallery-oil-link" href="#" oil-click-images>
                         <img class="gallery-img img-block" 
                         srcset="
                         ./images/oil-opt/waterfall@2x.jpg 264w,
@@ -103,6 +103,22 @@
             <a class="gallery-footer-link link" href=""></a>
         </div>
     </footer>
+
+    <!-- backdrop -->
+    <div class="backdrop is-oil-open" oil-open-images>
+        <div class="oil-modal-container">
+            <button class="oil-backdrop-close" type="button" oil-images-modal-close>
+                <svg class="close-icon" width="12px" height="12px">
+                  <use href="./images/icons.svg#icon-close-modal-menu"></use>
+                </svg> 
+            </button>
+            
+            <div class="oil-image-container">
+                    
+            </div>    
+        </div>
+    </div>
+
     <script type="module" src="./js/gallery.js"></script>
 </body>
 </html>
