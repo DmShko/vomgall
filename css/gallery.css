@@ -35,6 +35,7 @@
     max-width: 100%;
     /* height: auto; */
 }
+
 h1,h2,h3,h4,h5,h6,p{
     margin: 0;
 }
@@ -280,7 +281,6 @@ body {
 
 .backdrop-image-container {
     display: block;
-    flex-wrap: wrap;
     overflow-y: auto;
     background-color: var(--container-color);
     /* overflow-y: scroll; */
@@ -309,5 +309,28 @@ body {
      border-radius: 50%;
      cursor: pointer;
      transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.oil-changeImages-left {
+    position: absolute;
+
+    top: 50%;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--button-color);
+    width: 100px;
+    height: 30px;
+}
+
+.oil-changeImages-right {
+    position: absolute;
+
+    top: 50%;
+    right: 24px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--button-color);
+    width: 100px;
+    height: 30px;
 }
  /*           /BACKDROP           */
