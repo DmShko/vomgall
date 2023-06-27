@@ -53,7 +53,7 @@
     function toggleModal() {
         refs.header.classList.toggle("is-hover");
         refs.nav.classList.toggle("is-border");
-      }
+    }
 
     // New element manager
     function createHtmlElement (data) {

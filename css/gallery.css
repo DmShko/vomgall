@@ -316,10 +316,19 @@ body {
 
     top: 50%;
     border: none;
+    opacity: 0.8;
     border-radius: 4px;
     background-color: var(--button-color);
     width: 100px;
     height: 30px;
+}
+
+.oil-changeImages-left:hover{
+    color: rgba(207, 255, 73, 0.7);
+}
+
+.oil-changeImages-right:hover{
+    color: rgba(207, 255, 73, 0.7);
 }
 
 .oil-changeImages-right {
@@ -328,6 +337,7 @@ body {
     top: 50%;
     right: 24px;
     border: none;
+    opacity: 0.8;
     border-radius: 4px;
     background-color: var(--button-color);
     width: 100px;
