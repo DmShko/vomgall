@@ -23,6 +23,8 @@
 
         imagesContainerList: document.getElementsByClassName('gallery-oil-link'),
 
+        imagesContainer: document.querySelector('.gallery-oil-container'),
+
         backdropImagesContainer: document.querySelector('.oil-modal-container'),
 
         nav: document.querySelector("[change-border]"),
@@ -35,11 +37,11 @@
     refs.addressLimkHoverFocus.addEventListener("mouseout", toggleModal);
 
     // Open image link event
-    for(const element of refs.imagesContainerList) {
+    // for(const element of refs.imagesContainerList) {
         // add event for each images link of list
-        element.addEventListener("click", openGallModal);
+    refs.imagesContainer.addEventListener("click", openGallModal);
         // console.log(element);
-    }
+    // }
 
     // Close image link event
     refs.imageClose.addEventListener("click", closeGallModal);
@@ -66,6 +68,7 @@
         let newElement = document.createElement("div");
         //add class to new element class-attribute 
         newElement.classList.add("backdrop-image-container");
+        // console.log(data);
         newElement.innerHTML = data.innerHTML;
        
         //add new element to backdrop window
@@ -74,16 +77,22 @@
         return newElement;
     }
 
-    function openGallModal() {
+    function openGallModal(event) {
+        console.log(event.target);
+        if(event.target.classList.contains('gallery-oil-link')) {
         //open backdrop window
         refs.imageOpen.classList.toggle("is-oil-open");
         document.body.style.position = 'fixed';
       
-        let nel = createHtmlElement(this);
+        // prevent default browser actions
+        event.preventDefault();
+
+        let nel = createHtmlElement(event.target);
         
         const elementFirstChild = nel.children[0];
         elementFirstChild.classList.add("backdrop-img");  
         // console.log(refs.backdropImagesContainer);
+        }
     }
 
     function closeGallModal() {
