@@ -12,7 +12,7 @@
         imageLimkClick: document.querySelector("[oil-click-images]"),
         imageOpen: document.querySelector("[oil-open-images]"),
 
-        imageClose: document.querySelector("[oil-images-modal-close]"),
+        imageClose: document.querySelector(".backdrop"),
         // Open image
 
         //Change image
@@ -70,34 +70,41 @@
         newElement.classList.add("backdrop-image-container");
         // console.log(data);
         newElement.innerHTML = data.innerHTML;
-       
+
         //add new element to backdrop window
         refs.backdropImagesContainer.append(newElement);
-        
+
         return newElement;
     }
 
     function openGallModal(event) {
-        console.log(event.target);
-        if(event.target.classList.contains('gallery-oil-link')) {
+        // console.log(refs.imagesContainerList);
+        if(event.target.classList.contains('gallery-img')) {
         //open backdrop window
         refs.imageOpen.classList.toggle("is-oil-open");
         document.body.style.position = 'fixed';
-      
+        // event.target.style.cursor = "default";
         // prevent default browser actions
         event.preventDefault();
 
-        let nel = createHtmlElement(event.target);
+        let nel = createHtmlElement(event.target.parentElement);
         
         const elementFirstChild = nel.children[0];
         elementFirstChild.classList.add("backdrop-img");  
-        // console.log(refs.backdropImagesContainer);
         }
+        // console.log(refs.imagesContainerList);
     }
 
-    function closeGallModal() {
-        document.body.style.position = 'static';
-        refs.imageOpen.classList.toggle("is-oil-open");
+    function closeGallModal(e) {
+        if(e.target.classList.contains("backdrop")) {
+            document.body.style.position = 'static';
+            refs.imageOpen.classList.toggle("is-oil-open");
+        
+            const delMain =Array.from(refs.imagesContainer.children);
+            delMain.forEach(element => {
+            if(element.classList.contains("main")) element.classList.remove("main");
+            }); 
+        }
     }
 
     //Change image in modal (left or right)
@@ -126,7 +133,7 @@
                     break;
                 }
             }
-            console.log(refs.backdropImagesContainer);
         }
+        // console.log(refs.imagesContainerList);
     }   
 })();

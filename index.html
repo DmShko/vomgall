@@ -68,9 +68,29 @@
     <!-- Main -->
     <main class="main">
         <div class="all-container">
+
+            <!-- Cube rotate -->
+            <section class="section container">
+                <h1 class="anima-title">TODAY</h1>
+                <div class="anima-element">
+                    <div class="anima-date">
+                        <p class="anima-date-text"></p>
+                    </div>
+                    <div class="time-progress">
+                        
+                    </div>
+                    <div class="anima-time">
+                        <p class="anima-time-text"></p>
+                    </div>
+                    <div class="anima-year">
+                        <p class="anima-year-text"></p>
+                    </div>
+                </div> 
+            </section>
+            
             <!-- Hero -->
             <section class="section">
-                <h1 class="hero-title">My hobby</h1>
+                <h2 class="hero-title">My hobby</h2>
                 <div class="container hero-container">
                     <p class="hero-text">
                         I want to tell you about my art hobby on this page. I'm not a professional painter. But I constantly want to develop and I dream that I will achieve good results. You can leave a comments in 'Leave a review' section. Have a nice day! And thank all!
@@ -110,9 +130,13 @@
             <!-- Leave a review -->
             <section class="section">
                 <h2 class="review-title">Leave a review</h2>
+
                 <div class="container review-container">  
-                    <textarea class="review-textarea" name="user-comment" id="user-comment" placeholder="Enter feedback here"></textarea>  
-                    <button class="review-send-button" type="submit">Send</button>
+                    <form class="review-form" action="">
+                        <input class="review-input" type="User name" placeholder="Your name"  maxlength="20">
+                        <textarea class="review-textarea" name="user-comment" id="user-comment" maxlength="100" placeholder="Enter feedback here"></textarea>  
+                        <button class="review-send-button" type="submit">Send</button>
+                    </form>
                 </div>
             </section>
         </div>
