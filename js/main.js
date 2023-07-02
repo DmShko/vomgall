@@ -31,7 +31,7 @@
     reviewButtonLink: document.querySelector(".review-send-button"),
     reviewInputLink: document.querySelector(".review-input"),
     reviewAreaLink: document.querySelector(".review-textarea"),
-
+    reviewText: document.querySelector(".review-text"),
     // data and date
     timeElement: document.querySelector(".anima-time-text"),
     dateElement: document.querySelector(".anima-date-text"),
@@ -67,6 +67,7 @@
 
   refs.menuButtonLimkHoverFocus.addEventListener("mouseover", toggleModal);
   refs.menuButtonLimkHoverFocus.addEventListener("mouseout", toggleModal);
+
   setInterval (() => { 
   // Date and time
   let currentdate = new Date();
@@ -102,6 +103,17 @@
     e.preventDefault();
     if(refs.reviewInputLink.value.length !== 0 && refs.reviewAreaLink.value.length !== 0) {
      
+      console.log(refs.reviewInputLink.value);
+      let newTextElement = document.createElement("p");
+      let brElement = document.createElement("br");
+      refs.reviewText.appendChild(newTextElement);
+      newTextElement.classList.add(refs.reviewInputLink.value);
+
+      newTextElement.style.color = "black";
+      newTextElement.textContent = `${refs.reviewInputLink.value}: ${refs.reviewAreaLink.value}`;
+
+      refs.reviewInputLink.value = "";
+      refs.reviewAreaLink.value = "";
       return;
     }
     alert("I'm sorry. All fields must be filled!");
