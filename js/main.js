@@ -99,18 +99,56 @@
     refs.oil.classList.toggle("is-hidden");
   }
 
+  // generate <p> text content with wrap to new line
+  function generateWrapTextContent () {
+    // quantity symbols of textarea text
+    let iterationsQuantity = refs.reviewAreaLink.value.length / 100;
+    // separat int parh of "iterationsQuantity"
+    const iterationsIntQuantity = Math.floor(iterationsQuantity);
+    // separat fraction parh of "iterationsQuantity"
+    const iterationsFractionQuantity = iterationsQuantity - iterationsIntQuantity;
+
+    let resultMainArr = ["<" ,"b" , "r", ">"];
+    let resultFractionArr = ["<" ,"b" , "r", ">"];
+
+    // add first element because he will be cute skipped below
+    resultMainArr.push(refs.reviewAreaLink.value[0]);
+
+    // check that area text length placed on the line "review-text" once or more
+    if(iterationsIntQuantity > 0) { 
+      for(let iter = 0; iter < iterationsIntQuantity; iter += 1) {
+        // create main text
+        resultMainArr.push(...refs.reviewAreaLink.value.split("").slice(iter * 100 + 1, (iter + 1) * 100 + 1).concat(["<" ,"b" , "r", ">"]));
+        // when main text created, add fraction text
+        if(iter === iterationsIntQuantity - 1) {
+          resultFractionArr.push(...refs.reviewAreaLink.value.split("").slice((iter + 1) * 100 + 1, refs.reviewAreaLink.value.length));
+        }
+      }
+      // return finish result
+       return resultMainArr.concat(resultFractionArr).join("");
+    }
+
+    // if area text length isn't placed on the line "review-text" once or more
+    resultMainArr.pop(refs.reviewAreaLink.value[0]);
+    resultMainArr.push(...refs.reviewAreaLink.value.split(""));
+    return resultMainArr.concat(resultFractionArr).join("");
+   
+  }
+
+  // Press button event
   function reviewButtonIterr(e){
     e.preventDefault();
     if(refs.reviewInputLink.value.length !== 0 && refs.reviewAreaLink.value.length !== 0) {
-     
-      console.log(refs.reviewInputLink.value);
+      // variable with wrap text
+      let textWrap = generateWrapTextContent();
+      // console.log(refs.reviewInputLink.value);
       let newTextElement = document.createElement("p");
-      let brElement = document.createElement("br");
+      
       refs.reviewText.appendChild(newTextElement);
       newTextElement.classList.add(refs.reviewInputLink.value);
 
       newTextElement.style.color = "black";
-      newTextElement.textContent = `${refs.reviewInputLink.value}: ${refs.reviewAreaLink.value}`;
+      newTextElement.innerHTML = `${refs.reviewInputLink.value}: ${textWrap}`;
 
       refs.reviewInputLink.value = "";
       refs.reviewAreaLink.value = "";
