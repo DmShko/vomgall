@@ -132,7 +132,6 @@
     resultMainArr.pop(refs.reviewAreaLink.value[0]);
     resultMainArr.push(...refs.reviewAreaLink.value.split(""));
     return resultMainArr.concat(resultFractionArr).join("");
-   
   }
 
   // Press button event
@@ -140,7 +139,7 @@
     e.preventDefault();
     if(refs.reviewInputLink.value.length !== 0 && refs.reviewAreaLink.value.length !== 0) {
       // variable with wrap text
-      let textWrap = generateWrapTextContent();
+      // let textWrap = generateWrapTextContent();
       // console.log(refs.reviewInputLink.value);
       let newTextElement = document.createElement("p");
       
@@ -148,7 +147,7 @@
       newTextElement.classList.add(refs.reviewInputLink.value);
 
       newTextElement.style.color = "black";
-      newTextElement.innerHTML = `${refs.reviewInputLink.value}: ${textWrap}`;
+      newTextElement.innerHTML = `${refs.reviewInputLink.value.split("").concat([":", "<" ,"b" , "r", ">"]).join("")} ${refs.reviewAreaLink.value}`;
 
       refs.reviewInputLink.value = "";
       refs.reviewAreaLink.value = "";
