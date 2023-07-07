@@ -70,11 +70,21 @@
 
   setInterval (() => { 
   // Date and time
-  let currentdate = new Date();
-  let timedata = currentdate.getHours() + ":" + currentdate.getMinutes();
-  let datedata = currentdate.getDay() + "/" + currentdate.getMonth();
-  let yeardata = currentdate.getFullYear();
 
+  let currentdate = new Date();
+ 
+  const dateHours = currentdate.getHours().toString().length === 1 ? "0" + currentdate.getHours().toString() : currentdate.getHours().toString();
+  const dateMinutes = currentdate.getMinutes().toString().length === 1 ? "0" + currentdate.getMinutes().toString() : currentdate.getMinutes().toString();
+
+  // get date
+  const dateDay = currentdate.getDate().toString().length === 1 ? "0" + currentdate.getDate().toString() : currentdate.getDay().toString();
+  const dateMonth = currentdate.getMonth().toString().length === 1 ? "0" + (currentdate.getMonth() + 1).toString() : (currentdate.getMonth() + 1).toString();
+  
+  const timedata = dateHours + ":" + dateMinutes;
+  const datedata = dateDay + "/" + dateMonth;
+  const yeardata = currentdate.getFullYear();
+
+  // output
   refs.timeElement.textContent = timedata;
   refs.dateElement.textContent = datedata;
   refs.yearElement.textContent = yeardata;
