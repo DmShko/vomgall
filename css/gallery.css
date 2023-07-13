@@ -213,6 +213,26 @@ body {
     outline: 3px solid rgba(222, 255, 73, 0.7);
  }
  
+.watercolor-up {
+   position: fixed; 
+   z-index: 5;
+
+   width: 60px;
+   height: 60px;
+   right: 10px;
+   top: 50%;
+
+   border: none;
+   color: var(--text-colorr);
+   background-color: var(--button-color);
+   border-radius: 50%;
+   visibility: hidden;
+}
+
+.onUpButton {
+    visibility: visible;
+}
+
  /*==========BACKDROP=============*/
 .backdrop {
     position: fixed; 

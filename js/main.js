@@ -77,7 +77,7 @@
   const dateMinutes = currentdate.getMinutes().toString().length === 1 ? "0" + currentdate.getMinutes().toString() : currentdate.getMinutes().toString();
 
   // get date
-  const dateDay = currentdate.getDate().toString().length === 1 ? "0" + currentdate.getDate().toString() : currentdate.getDay().toString();
+  const dateDay = currentdate.getDate().toString().length === 1 ? "0" + currentdate.getDate().toString() : currentdate.getDate().toString();
   const dateMonth = currentdate.getMonth().toString().length === 1 ? "0" + (currentdate.getMonth() + 1).toString() : (currentdate.getMonth() + 1).toString();
   
   const timedata = dateHours + ":" + dateMinutes;

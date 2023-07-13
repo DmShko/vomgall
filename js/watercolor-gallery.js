@@ -28,6 +28,9 @@
         backdropImagesContainer: document.querySelector('.watercolor-modal-container'),
 
         nav: document.querySelector("[change-border]"),
+
+        // up button
+        upButton: document.querySelector(".watercolor-up"),
     }
 
     refs.headerLimkHoverFocus.addEventListener("mouseover", toggleModal);
@@ -52,6 +55,17 @@
     // press right modal button
     refs.imagesToggleRight.addEventListener("click", leftRightImages)
 
+    // upButton
+    let up = function () {
+        if (window.scrollY > 200) 
+            refs.upButton.classList.add("onUpButton"); 
+        else 
+            refs.upButton.classList.remove("onUpButton"); 
+    };
+ 
+    window.addEventListener("scroll", up);
+
+    
     function toggleModal() {
         refs.header.classList.toggle("is-hover");
         refs.nav.classList.toggle("is-border");
