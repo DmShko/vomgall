@@ -38,6 +38,9 @@
     yearElement: document.querySelector(".anima-year-text"),
 
     secondProgress: document.querySelector(".time-progress"),
+
+    // up button
+    upButton: document.querySelector(".index-up"),
   };
     
   //gallery container hidden
@@ -92,6 +95,20 @@
   refs.secondProgress.style.background = `conic-gradient(var(--main-text-color) ${(360/60) * currentdate.getSeconds()}deg, rgba(255, 255, 255, 0.5) 0deg)`;
  
   }, 1000)
+
+  refs.upButton.addEventListener("click", function goUP() {
+    window.scrollTo(0,0);
+  });
+
+  // upButton
+  let up = function () {
+      if (window.scrollY > 200) 
+          refs.upButton.classList.add("onUpButton"); 
+      else 
+          refs.upButton.classList.remove("onUpButton"); 
+  };
+
+  window.addEventListener("scroll", up);
 
   function toggleModal() {
     refs.header.classList.toggle("is-hover");

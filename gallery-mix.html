@@ -34,10 +34,13 @@
         <div class="gallery-all-container container">
             <h1 class="gallery-all-title">Select image</h1>
 
+            <!-- go up button -->
+            <button class="mix-up" type="button">Up</button>
+
             <!-- gallery mix -->
             <div class="gallery-mix-container">
-                <a class="gallery-mix-link" href="#">
-                    <img class="gallery-img img-block" 
+                <a class="gallery-mix-link" href="#" mix-click-images>
+                    <img class="gallery-img img-block" loading="lazy"
                     srcset="
                     ./images/mix-opt/butterfly@2x.jpg 264w,
                     ./images/mix-opt/butterfly@2x.jpg 528w
@@ -46,8 +49,8 @@
                 src="./images/mix-opt/butterfly@2x.jpg" alt="UI Designer Daniel Wilson" height="260" width="264"
                 />
             </a>
-            <a class="gallery-mix-link" href="#">
-                <img class="gallery-img img-block" 
+            <a class="gallery-mix-link" href="#" mix-click-images>
+                <img class="gallery-img img-block" loading="lazy"
                 srcset="
                 ./images/mix-opt/kharkov@2x.jpg 264w,
                 ./images/mix-opt/kharkov@2x.jpg 528w
@@ -56,8 +59,8 @@
             src="./images/mix-opt/kharkov@2x.jpg" alt="UI Designer Daniel Wilson" height="260" width="264"
             />
             </a>
-            <a class="gallery-mix-link" href="#">
-                <img class="gallery-img img-block" 
+            <a class="gallery-mix-link" href="#" mix-click-images>
+                <img class="gallery-img img-block" loading="lazy"
                 srcset="
                 ./images/mix-opt/pear@2x.jpg 264w,
                 ./images/mix-opt/pear@2x.jpg 528w
@@ -66,8 +69,8 @@
             src="./images/mix-opt/pear@2x.jpg" alt="UI Designer Daniel Wilson" height="260" width="264"
             />
             </a>
-            <a class="gallery-mix-link" href="#">
-                <img class="gallery-img img-block" 
+            <a class="gallery-mix-link" href="#" mix-click-images>
+                <img class="gallery-img img-block" loading="lazy"
                 srcset="
                 ./images/mix-opt/pear-apple@2x.jpg 264w,
                 ./images/mix-opt/pear-apple@2x.jpg 528w
@@ -76,8 +79,8 @@
             src="./images/mix-opt/pear-apple@2x.jpg" alt="UI Designer Daniel Wilson" height="260" width="264"
             />
             </a>
-            <a class="gallery-mix-link" href="#">
-                <img class="gallery-img img-block" 
+            <a class="gallery-mix-link" href="#" mix-click-images>
+                <img class="gallery-img img-block" loading="lazy"
                 srcset="
                 ./images/mix-opt/portrait@2x.jpg 264w,
                 ./images/mix-opt/portrait@2x.jpg 528w
@@ -98,6 +101,21 @@
             <a class="gallery-footer-link link" href=""></a>
         </div>
     </footer>
-    <script type="module" src="./js/gallery.js"></script>
+
+    <!-- backdrop -->
+    <div class="backdrop is-mix-open" mix-open-images>
+        <div class="mix-modal-container container">
+            <button class="mix-changeImages-left" type="button" mix-changeImages-left>
+                <p>Previous</p>
+            </button> 
+
+            <button class="mix-changeImages-right" type="button" mix-changeImages-right>
+                <p>Next</p>
+            </button>  
+        </div>
+    </div>
+    
+
+    <script type="module" src="./js/mix-gallery.js"></script>
 </body>
 </html>

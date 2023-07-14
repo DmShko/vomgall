@@ -28,6 +28,9 @@
         backdropImagesContainer: document.querySelector('.oil-modal-container'),
 
         nav: document.querySelector("[change-border]"),
+
+       // up button
+       upButton: document.querySelector(".oil-up"),
     }
 
     refs.headerLimkHoverFocus.addEventListener("mouseover", toggleModal);
@@ -51,6 +54,20 @@
 
     // press right modal button
     refs.imagesToggleRight.addEventListener("click", leftRightImages)
+
+    refs.upButton.addEventListener("click", function goUP() {
+        window.scrollTo(0,0);
+    });
+    
+    // upButton
+    let up = function () {
+        if (window.scrollY > 200) 
+            refs.upButton.classList.add("onUpButton"); 
+        else 
+            refs.upButton.classList.remove("onUpButton"); 
+    };
+ 
+    window.addEventListener("scroll", up);
 
     function toggleModal() {
         refs.header.classList.toggle("is-hover");

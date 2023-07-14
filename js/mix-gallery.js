@@ -9,28 +9,28 @@
         nav: document.querySelector("[change-border]"),
 
         // Open image
-        imageLimkClick: document.querySelector("[watercolor-click-images]"),
-        imageOpen: document.querySelector("[watercolor-open-images]"),
+        imageLimkClick: document.querySelector("[mix-click-images]"),
+        imageOpen: document.querySelector("[mix-open-images]"),
 
         imageClose: document.querySelector(".backdrop"),
         // Open image
 
         //Change image
-        imagesToggleLeft: document.querySelector("[watercolor-changeImages-left]"),
-        imagesToggleRight: document.querySelector("[watercolor-changeImages-right]"),
+        imagesToggleLeft: document.querySelector("[mix-changeImages-left]"),
+        imagesToggleRight: document.querySelector("[mix-changeImages-right]"),
         imageInner: 0,
         //Change image
 
-        imagesContainerList: document.getElementsByClassName('gallery-watercolor-link'),
+        imagesContainerList: document.getElementsByClassName('gallery-mix-link'),
 
-        imagesContainer: document.querySelector('.gallery-watercolor-container'),
+        imagesContainer: document.querySelector('.gallery-mix-container'),
 
-        backdropImagesContainer: document.querySelector('.watercolor-modal-container'),
+        backdropImagesContainer: document.querySelector('.mix-modal-container'),
 
         nav: document.querySelector("[change-border]"),
 
         // up button
-        upButton: document.querySelector(".watercolor-up"),
+        upButton: document.querySelector(".mix-up"),
     }
 
     refs.headerLimkHoverFocus.addEventListener("mouseover", toggleModal);
@@ -98,25 +98,25 @@
     function openGallModal(event) {
         // console.log(refs.imagesContainerList);
         if(event.target.classList.contains('gallery-img')) {
-        //open backdrop window
-        refs.imageOpen.classList.toggle("is-watercolor-open");
-        document.body.style.position = 'fixed';
-        // event.target.style.cursor = "default";
-        // prevent default browser actions
-        event.preventDefault();
-
-        let nel = createHtmlElement(event.target.parentElement);
-        
-        const elementFirstChild = nel.children[0];
-        elementFirstChild.classList.add("backdrop-img");  
-        }
-        // console.log(refs.imagesContainerList);
+            //open backdrop window
+            refs.imageOpen.classList.toggle("is-mix-open");
+            document.body.style.position = 'fixed';
+            // event.target.style.cursor = "default";
+            // prevent default browser actions
+            event.preventDefault();
+    
+            let nel = createHtmlElement(event.target.parentElement);
+            
+            const elementFirstChild = nel.children[0];
+            elementFirstChild.classList.add("backdrop-img");  
+            }
+            // console.log(refs.imagesContainerList);
     }
 
     function closeGallModal(e) {
         if(e.target.classList.contains("backdrop")) {
             document.body.style.position = 'static';
-            refs.imageOpen.classList.toggle("is-watercolor-open");
+            refs.imageOpen.classList.toggle("is-mix-open");
         
             const delMain =Array.from(refs.imagesContainer.children);
             delMain.forEach(element => {
@@ -127,11 +127,12 @@
 
     //Change image in modal (left or right)
     function leftRightImages() {
+        
        const newElementChange = document.querySelector('.backdrop-image-container');
-       // console.log(newElementChange.innerHTML);
+    // console.log(newElementChange.innerHTML);
        if(this === refs.imagesToggleLeft) {
            for(let elLeft = 0; elLeft < refs.imagesContainerList.length; elLeft += 1) {
-               // console.log("Right is true!");
+            // console.log("Right is true!");
                if(refs.imagesContainerList[elLeft].classList.contains('main') && elLeft !== 0) {
                    newElementChange.innerHTML = refs.imagesContainerList[elLeft - 1].innerHTML;
                    newElementChange.firstElementChild.classList.add("backdrop-img"); 

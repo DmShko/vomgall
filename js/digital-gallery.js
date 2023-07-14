@@ -9,28 +9,28 @@
         nav: document.querySelector("[change-border]"),
 
         // Open image
-        imageLimkClick: document.querySelector("[watercolor-click-images]"),
-        imageOpen: document.querySelector("[watercolor-open-images]"),
+        imageLimkClick: document.querySelector("[digital-click-images]"),
+        imageOpen: document.querySelector("[digital-open-images]"),
 
         imageClose: document.querySelector(".backdrop"),
         // Open image
 
         //Change image
-        imagesToggleLeft: document.querySelector("[watercolor-changeImages-left]"),
-        imagesToggleRight: document.querySelector("[watercolor-changeImages-right]"),
+        imagesToggleLeft: document.querySelector("[digital-changeImages-left]"),
+        imagesToggleRight: document.querySelector("[digital-changeImages-right]"),
         imageInner: 0,
         //Change image
 
-        imagesContainerList: document.getElementsByClassName('gallery-watercolor-link'),
+        imagesContainerList: document.getElementsByClassName('gallery-digital-link'),
 
-        imagesContainer: document.querySelector('.gallery-watercolor-container'),
+        imagesContainer: document.querySelector('.gallery-digital-container'),
 
-        backdropImagesContainer: document.querySelector('.watercolor-modal-container'),
+        backdropImagesContainer: document.querySelector('.digital-modal-container'),
 
         nav: document.querySelector("[change-border]"),
 
         // up button
-        upButton: document.querySelector(".watercolor-up"),
+        upButton: document.querySelector(".digital-up"),
     }
 
     refs.headerLimkHoverFocus.addEventListener("mouseover", toggleModal);
@@ -99,7 +99,7 @@
         // console.log(refs.imagesContainerList);
         if(event.target.classList.contains('gallery-img')) {
         //open backdrop window
-        refs.imageOpen.classList.toggle("is-watercolor-open");
+        refs.imageOpen.classList.toggle("is-digital-open");
         document.body.style.position = 'fixed';
         // event.target.style.cursor = "default";
         // prevent default browser actions
@@ -116,7 +116,7 @@
     function closeGallModal(e) {
         if(e.target.classList.contains("backdrop")) {
             document.body.style.position = 'static';
-            refs.imageOpen.classList.toggle("is-watercolor-open");
+            refs.imageOpen.classList.toggle("is-digital-open");
         
             const delMain =Array.from(refs.imagesContainer.children);
             delMain.forEach(element => {
