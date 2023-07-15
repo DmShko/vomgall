@@ -5,7 +5,7 @@
     --text-color: rgba(255, 255, 255, 0.8);
     --section-color: rgba(255, 255, 255);
     --color-white: #FFF;
-    --button-color:#bfc1c7;
+    --button-color:rgb(198, 199, 191);
     --main-text-color: rgb(97, 66, 238);
     --hover-link-color: rgba(255, 255, 255, 0.8);
 }
@@ -282,7 +282,7 @@ body {
     flex-direction: row;
     align-items: center;
 
-    background-color: var(--button-color);
+    background: linear-gradient(rgb(181, 192, 231), rgb(139, 144, 165), var(--button-color),  rgb(194, 202, 231));
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 4px;
     box-shadow:0px 2px 1px rgba(16, 16, 24, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
@@ -358,17 +358,22 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    backdrop-filter: blur(2px);
 }
 
 .all-container {
     padding-top: 50px;
 }
 
+.anima-element {
+    backdrop-filter: blur(2px);
+}
+
 .hero-title, .oil-title,
 .watercolor-title, .digital-title,
 .mix-title, .review-title {
     font-weight: 700;
-    font-size: 18px;
+    font-size: 22px;
     line-height: 1.5;
 
     color: var(--section-color);
@@ -378,7 +383,7 @@ body {
 
 .hero-text {
     font-weight: 700;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.5;
     text-align: start;
 
@@ -423,7 +428,6 @@ body {
 
 .time-progress {
     background: conic-gradient(var(--main-text-color) 10deg, rgba(255, 255, 255, 0.5) 0deg);
-    
     width: 65px;
     height: 65px;
     border-radius: 50%;
@@ -816,6 +820,7 @@ body {
     border-color: var(--container-color);
     border-radius: 4px;
     visibility: hidden;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
 
  .index-up:hover {

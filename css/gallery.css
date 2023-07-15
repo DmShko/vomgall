@@ -235,6 +235,7 @@ body {
    border-color: var(--container-color);
    border-radius: 4px;
    visibility: hidden;
+   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .oil-up:hover,
@@ -263,7 +264,6 @@ body {
     overflow-y: auto;
     opacity: 1;
     visibility: visible;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
  }
 
 .is-oil-open,
@@ -334,7 +334,6 @@ body {
     display: block;
     overflow-y: auto;
     background-color: var(--container-color);
-    /* overflow-y: scroll; */
 }
 
 .backdrop-image-container .gallery-img {
@@ -384,6 +383,7 @@ body {
     background-color: var(--button-color);
     width: 100px;
     height: 30px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .oil-changeImages-left:hover,
@@ -416,5 +416,6 @@ body {
     background-color: var(--button-color);
     width: 100px;
     height: 30px;
+    transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
  /*           /BACKDROP           */
