@@ -28,6 +28,7 @@
     watercolor: document.querySelector("[hidden-oil]"),
 
     // review elements
+    formElement: document.querySelector(".review-form"),
     reviewButtonLink: document.querySelector(".review-send-button"),
     reviewInputLink: document.querySelector(".review-input"),
     reviewAreaLink: document.querySelector(".review-textarea"),
@@ -71,28 +72,87 @@
   refs.menuButtonLimkHoverFocus.addEventListener("mouseover", toggleModal);
   refs.menuButtonLimkHoverFocus.addEventListener("mouseout", toggleModal);
 
-  setInterval (() => { 
-  // Date and time
+  // localStorage.clear();
+  // new 'review-text' child
+  function newChild() {
 
-  let currentdate = new Date();
- 
-  const dateHours = currentdate.getHours().toString().length === 1 ? "0" + currentdate.getHours().toString() : currentdate.getHours().toString();
-  const dateMinutes = currentdate.getMinutes().toString().length === 1 ? "0" + currentdate.getMinutes().toString() : currentdate.getMinutes().toString();
-
-  // get date
-  const dateDay = currentdate.getDate().toString().length === 1 ? "0" + currentdate.getDate().toString() : currentdate.getDate().toString();
-  const dateMonth = currentdate.getMonth().toString().length === 1 ? "0" + (currentdate.getMonth() + 1).toString() : (currentdate.getMonth() + 1).toString();
+    let newTextElement = document.createElement("p");
+      
+    refs.reviewText.appendChild(newTextElement);
   
-  const timedata = dateHours + ":" + dateMinutes;
-  const datedata = dateDay + "/" + dateMonth;
-  const yeardata = currentdate.getFullYear();
+    newTextElement.style.color = "black";
 
+    return newTextElement;
+  }
+
+  // save review to local storage
+  function saveToLocalStorage(userCommentDate, key){
+
+    const LOCAL_STORAG = key;
+
+    // get value input fields
+    const { elements: {user, comment} } = refs.formElement;
+
+    // write to data local storage
+    localStorage.setItem(LOCAL_STORAG,  
+    JSON.stringify({user: userCommentDate +  user.value, comment: comment.value}));
+
+  }
+
+  // fill 'review-text' field 
+  function getLocalStorageValue() {
+    if(localStorage.length !== null) {
+      for (let index = 0; index < localStorage.length; index += 1) {
+        
+          let areaChild = newChild();
+      
+          let storageObj= JSON.parse(localStorage.getItem(localStorage.key(index)));
+
+          areaChild.classList.add(storageObj[Object.keys(storageObj)[0]]);
+        
+          areaChild.innerHTML = `${storageObj[Object.keys(storageObj)[0]].split("").concat([":", "<" ,"b" , "r", ">"]).join("")} ${storageObj[Object.keys(storageObj)[1]]}`;
+      }
+    }
+  }
+
+  getLocalStorageValue();
+
+  // get curent data and time
+  function getCurrentDate() {
+
+    let currentdate = new Date();
+ 
+    const dateHours = currentdate.getHours().toString().length === 1 ? "0" + currentdate.getHours().toString() : currentdate.getHours().toString();
+    const dateMinutes = currentdate.getMinutes().toString().length === 1 ? "0" + currentdate.getMinutes().toString() : currentdate.getMinutes().toString();
+    const dateSeconds = currentdate.getSeconds();
+
+    // get date
+    const dateDay = currentdate.getDate().toString().length === 1 ? "0" + currentdate.getDate().toString() : currentdate.getDate().toString();
+    const dateMonth = currentdate.getMonth().toString().length === 1 ? "0" + (currentdate.getMonth() + 1).toString() : (currentdate.getMonth() + 1).toString();
+    
+    const timedata = dateHours + ":" + dateMinutes;
+    const datedata = dateDay + "/" + dateMonth;
+    const yeardata = currentdate.getFullYear();
+
+    let newDateObj = [timedata, datedata, yeardata, dateSeconds];
+
+    return newDateObj;
+
+  }
+
+  setInterval (() => { 
+
+  // Date and time
+  const dateArr = getCurrentDate();
+
+  
   // output
-  refs.timeElement.textContent = timedata;
-  refs.dateElement.textContent = datedata;
-  refs.yearElement.textContent = yeardata;
+  refs.timeElement.textContent = dateArr[0];
+  refs.dateElement.textContent = dateArr[1];
+  refs.yearElement.textContent = dateArr[2];
 
-  refs.secondProgress.style.background = `conic-gradient(var(--main-text-color) ${(360/60) * currentdate.getSeconds()}deg, rgba(255, 255, 255, 0.5) 0deg)`;
+  // (dateArr[3] || 60) - > output 60 deg, when dateArr[3] = 0;
+  refs.secondProgress.style.background = `conic-gradient(var(--main-text-color) ${(360/60) * (dateArr[3] || 60)}deg, rgba(255, 255, 255, 0.5) 0deg)`;
  
   }, 1000)
 
@@ -165,21 +225,25 @@
   function reviewButtonIterr(e){
     e.preventDefault();
     if(refs.reviewInputLink.value.length !== 0 && refs.reviewAreaLink.value.length !== 0) {
-      // variable with wrap text
-      // let textWrap = generateWrapTextContent();
-      // console.log(refs.reviewInputLink.value);
-      let newTextElement = document.createElement("p");
-      
-      refs.reviewText.appendChild(newTextElement);
-      newTextElement.classList.add(refs.reviewInputLink.value);
+      // get current data and time
+      let commentTime = getCurrentDate();
 
-      newTextElement.style.color = "black";
-      newTextElement.innerHTML = `${refs.reviewInputLink.value.split("").concat([":", "<" ,"b" , "r", ">"]).join("")} ${refs.reviewAreaLink.value}`;
+      saveToLocalStorage(`${commentTime[1]}/${commentTime[2]}${commentTime[0]}:${commentTime[3]}`, refs.reviewInputLink.value);
 
+      // add new murkup
+      let currentNewChild = newChild();
+      currentNewChild.classList.add(refs.reviewInputLink.value);
+
+      // add main text to 'textarea'
+      currentNewChild.insertAdjacentHTML('beforeend',
+       `${commentTime[1]}/${commentTime[2]}${commentTime[0]}:${commentTime[3]}${refs.reviewInputLink.value.split("").concat([":", "<" ,"b" , "r", ">"]).join("")} ${refs.reviewAreaLink.value}`);
+
+      // clear input fields
       refs.reviewInputLink.value = "";
       refs.reviewAreaLink.value = "";
       return;
     }
     alert("I'm sorry. All fields must be filled!");
   }
+
 })();
