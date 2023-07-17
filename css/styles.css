@@ -39,6 +39,10 @@ h1,h2,h3,h4,h5,h6,p{
     margin: 0;
 }
 
+html {
+    /* for smooth scrolling "Up" by button */
+    scroll-behavior: smooth;
+}
 /*reset/*/
 
 /* hover and focus */

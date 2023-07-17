@@ -73,6 +73,12 @@
   refs.menuButtonLimkHoverFocus.addEventListener("mouseout", toggleModal);
 
   // localStorage.clear();
+
+  function colorText(){
+    const spanelement = document.querySelectorAll('span');
+    Array.from(spanelement).map(element => element.style.color = 'blue');
+  }
+  
   // new 'review-text' child
   function newChild() {
 
@@ -81,6 +87,12 @@
     refs.reviewText.appendChild(newTextElement);
   
     newTextElement.style.color = "black";
+
+    newTextElement.style.backgroundColor = "lightblue";
+    newTextElement.style.opacity = "0.7";
+    newTextElement.style.borderRadius = "4px";
+    newTextElement.style.marginBottom = "10px";
+    newTextElement.style.padding = "10px";
 
     return newTextElement;
   }
@@ -112,6 +124,7 @@
         
           areaChild.innerHTML = `${storageObj[Object.keys(storageObj)[0]].split("").concat([":", "<" ,"b" , "r", ">"]).join("")} ${storageObj[Object.keys(storageObj)[1]]}`;
       }
+      colorText();
     }
   }
 
@@ -228,7 +241,7 @@
       // get current data and time
       let commentTime = getCurrentDate();
 
-      saveToLocalStorage(`${commentTime[1]}/${commentTime[2]}${commentTime[0]}:${commentTime[3]}`, refs.reviewInputLink.value);
+      saveToLocalStorage(`<span>${commentTime[1]}/${commentTime[2]}_${commentTime[0]}:${commentTime[3]}</span>_`, refs.reviewInputLink.value);
 
       // add new murkup
       let currentNewChild = newChild();
@@ -236,8 +249,10 @@
 
       // add main text to 'textarea'
       currentNewChild.insertAdjacentHTML('beforeend',
-       `${commentTime[1]}/${commentTime[2]}${commentTime[0]}:${commentTime[3]}${refs.reviewInputLink.value.split("").concat([":", "<" ,"b" , "r", ">"]).join("")} ${refs.reviewAreaLink.value}`);
+       `<span>${commentTime[1]}/${commentTime[2]}_${commentTime[0]}:${commentTime[3]}</span>_${refs.reviewInputLink.value.split("").concat([":", "<" ,"b" , "r", ">"]).join("")} ${refs.reviewAreaLink.value}`);
 
+      colorText();
+      
       // clear input fields
       refs.reviewInputLink.value = "";
       refs.reviewAreaLink.value = "";
