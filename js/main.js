@@ -42,6 +42,15 @@
 
     // up button
     upButton: document.querySelector(".index-up"),
+
+    // admin mode
+    adminBackdrop: document.querySelector(".admin-mode"),
+    adminBackdropInput: document.querySelector(".admin-password"),
+
+    instrMain: document.querySelector(".admin-panel"),
+    instrInput: document.querySelector(".admin-panel-input"),
+    instrButtonUser: document.querySelector(".admin-delete-user"),
+    instrButtonAll: document.querySelector(".admin-delete-all"),
   };
     
   //gallery container hidden
@@ -72,7 +81,113 @@
   refs.menuButtonLimkHoverFocus.addEventListener("mouseover", toggleModal);
   refs.menuButtonLimkHoverFocus.addEventListener("mouseout", toggleModal);
 
+
+  // admin's instruments input event handler
+  const admUserBtn = function(e) {
+    clearLocalStorage(e);
+  };
+
+  // admin's instruments input event handler
+  const admAllBtn = function(e) {
+    clearLocalStorage(e);
+  };
+
+  // admin's instruments user comment clear button event
+  refs.instrButtonUser.addEventListener("click", admUserBtn);  
+
+  // admin's instruments all comment clear button event
+  refs.instrButtonAll.addEventListener("click", admAllBtn);  
+  
+  // admin input handler
+  const adminInputEvent = function() {
+    
+    // read admin's backdrop input value
+    let passwordvalue = refs.adminBackdropInput.value;
+
+    if(refs.instrMain.classList.contains("is-hidden"))
+    refs.instrInput.value = "";
+    // check admin's backdrop input value
+    if(VOMBAT_PASSWORD === passwordvalue) {
+      // toggle admin's instruments visible
+      refs.instrMain.classList.toggle("is-hidden");
+
+      // toggle admin's backdrop visible
+      refs.adminBackdrop.classList.toggle("is-hidden");
+
+      // clear admin's backdrop input
+      refs.adminBackdropInput.value = "";
+
+      // go to admin's instruments handler
+      clearLocalStorage();
+    }
+  };
+
+  // window button event handler
+  hotkeys('v+g', function(){
+
+    refs.adminBackdrop.classList.toggle("is-hidden");
+
+    // add admin backdrop's elements events
+    refs.adminBackdropInput.
+      addEventListener("input", _.debounce(adminInputEvent, 1000, { 'trailing': true }));
+
+    // admin backdrop's elements events delete
+    if(refs.adminBackdrop.classList.contains("is-hidden")) refs.adminBackdropInput.
+      removeEventListener("input", _.debounce(adminInputEvent, 500, { 'trailing': true }));
+  });
+
+  // admin password
+  const VOMBAT_PASSWORD = "vombat";
+
   // localStorage.clear();
+
+  function clearLocalStorage(e) {
+   
+    // e.preventDefault();
+      
+    // user keys array
+    const userKeysArr = [];
+
+    // get all array with substring "_vomgall"
+    for(let index = 0; index < localStorage.length; index += 1) {
+      
+      if(localStorage.key(index).includes("_vomgall"))
+          
+        userKeysArr.push(localStorage.key(index));
+    }
+
+    // clear selected user comments for key
+    if(e.target.className === 'admin-delete-user' && refs.instrInput.value !== "") {
+      
+      // get admin's instruments input value
+      let deleteCurrentKey = refs.instrInput.value;
+
+      // find key in all array with substring "_vomgall"
+      let foundKey = userKeysArr.find(element => {
+       
+        return element === deleteCurrentKey;
+
+      }) 
+
+      if(foundKey === undefined) {
+        alert("Please, input valid key!");
+        return;
+      }
+
+      // delete user data
+      localStorage.removeItem(foundKey);
+
+      foundKey = "";
+    }
+
+    // clear all comments
+    if(e.target.className === 'admin-delete-all') {
+      userKeysArr.map(element => 
+        localStorage.removeItem(element))
+    }
+    
+    // console.log(userKeysArr);}
+  }
 
   function colorText(){
     const spanelement = document.querySelectorAll('span');
@@ -90,7 +205,7 @@
 
     newTextElement.style.backgroundColor = "lightblue";
     newTextElement.style.opacity = "0.7";
-    newTextElement.style.borderRadius = "4px";
+    newTextElement.style.borderRadius = "6px";
     newTextElement.style.marginBottom = "10px";
     newTextElement.style.padding = "10px";
 
@@ -100,7 +215,7 @@
   // save review to local storage
   function saveToLocalStorage(userCommentDate, key){
 
-    const LOCAL_STORAG = key;
+    const LOCAL_STORAG = key + "_vomgall";
 
     // get value input fields
     const { elements: {user, comment} } = refs.formElement;
@@ -240,6 +355,8 @@
     if(refs.reviewInputLink.value.length !== 0 && refs.reviewAreaLink.value.length !== 0) {
       // get current data and time
       let commentTime = getCurrentDate();
+
+      commentTime[3] = commentTime[3].toString().length === 1 ? "0" + commentTime[3].toString() : commentTime[3].toString();
 
       saveToLocalStorage(`<span>${commentTime[1]}/${commentTime[2]}_${commentTime[0]}:${commentTime[3]}</span>_`, refs.reviewInputLink.value);
 

@@ -146,6 +146,19 @@
                 </div>
             </section>
         </div>
+
+        <!-- admin instruments -->
+        <div class="admin-panel">
+            <input class="admin-panel-input" type="text">
+
+            <button class="admin-delete-user" type="button">
+                Clear UsCm
+            </button>
+
+            <button class="admin-delete-all" type="button">
+                Clear All
+            </button>
+        </div>
     </main>
 
     <!-- Footer -->
@@ -194,6 +207,13 @@
         </div>
     </div>
 
+    <!-- backdrop admin mode-->
+    <div class="admin-mode is-hidden">
+        <form class="admin-form" action="">
+            <input class="admin-password" type="text">
+        </form>
+    </div>
+
     <!-- Mobile menu -->
     <div class="menu-container js-menu-container" id="mobile-menu">
         <nav class="mobile-page-nav">
@@ -230,6 +250,7 @@
         </address> 
     </div>
 
+    <script src="./node_modules/hotkeys-js/dist/hotkeys.min.js"></script>
     <script src="./node_modules/lodash/lodash.js"></script>
     <script  type="module"  src="./js/main.js"></script>
     <script
