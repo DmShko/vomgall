@@ -1,3 +1,5 @@
+import { resultBack } from './access.js';
+
 (() => {
 
   const refs = {
@@ -51,6 +53,8 @@
     instrInput: document.querySelector(".admin-panel-input"),
     instrButtonUser: document.querySelector(".admin-delete-user"),
     instrButtonAll: document.querySelector(".admin-delete-all"),
+
+    footerTextElement: document.querySelector(".footer-text"),
   };
     
   //gallery container hidden
@@ -82,6 +86,8 @@
   refs.menuButtonLimkHoverFocus.addEventListener("mouseout", toggleModal);
 
 
+  refs.footerTextElement.textContent += ` ${getCurrentDate()[2]}`;
+
   // admin's instruments input event handler
   const admUserBtn = function(e) {
     clearLocalStorage(e);
@@ -100,14 +106,16 @@
   
   // admin input handler
   const adminInputEvent = function() {
-    
+ 
     // read admin's backdrop input value
-    let passwordvalue = refs.adminBackdropInput.value;
+    let passwordvalue = resultBack;
 
     if(refs.instrMain.classList.contains("is-hidden"))
     refs.instrInput.value = "";
+
     // check admin's backdrop input value
-    if(VOMBAT_PASSWORD === passwordvalue) {
+    if(passwordvalue === refs.adminBackdropInput.value) {
+      
       // toggle admin's instruments visible
       refs.instrMain.classList.toggle("is-hidden");
 
@@ -118,7 +126,7 @@
       refs.adminBackdropInput.value = "";
 
       // go to admin's instruments handler
-      clearLocalStorage();
+      // clearLocalStorage();
     }
   };
 
@@ -135,9 +143,6 @@
     if(refs.adminBackdrop.classList.contains("is-hidden")) refs.adminBackdropInput.
       removeEventListener("input", _.debounce(adminInputEvent, 500, { 'trailing': true }));
   });
-
-  // admin password
-  const VOMBAT_PASSWORD = "vombat";
 
   // localStorage.clear();
 
