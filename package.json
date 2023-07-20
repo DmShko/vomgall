@@ -3,5 +3,23 @@
     "hotkeys-js": "^3.11.2",
     "joi": "^17.9.2",
     "lodash": "^4.17.21"
-  }
+  },
+  "name": "vomgall",
+  "description": "Site about my art life",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DmShko/vomgall.git"
+  },
+  "author": "DmShko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DmShko/vomgall/issues"
+  },
+  "homepage": "https://github.com/DmShko/vomgall#readme"
 }
