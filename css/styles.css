@@ -75,20 +75,18 @@ html {
 
 /* Width size of windows 320px + */
 .container {
-    min-width: 320px;
-    max-width: 428px;
+    /* min-width: 320px; */
+    max-width: 100vw;
     padding-left: 30px;
     padding-right: 30px;
     margin-left: auto;
     margin-right: auto;
     padding-top: 10px;
     padding-bottom: 10px;
-    
-
     /* outline: 2px solid red;  */
 }
 
-@media only screen and (min-width: 428px){
+/* @media only screen and (min-width: 428px){
     .container {    
         max-width: 428px;
     }
@@ -104,7 +102,7 @@ html {
     .container {    
         max-width: 1200px;
     }
-}
+} */
 
 .section {
     padding: 25px 0;
@@ -369,10 +367,6 @@ body {
     padding-top: 50px;
 }
 
-.anima-element {
-    backdrop-filter: blur(2px);
-}
-
 .hero-title, .oil-title,
 .watercolor-title, .digital-title,
 .mix-title, .review-title {
@@ -405,12 +399,14 @@ body {
   align-items: center;
   gap: 30px;
 
-  width: 350px;
+  min-width: 350px;
+  max-width: calc(100vw / 2);
   height: 70px;
   margin-left: auto;
   margin-right: auto;
 
   border-radius: 4px;
+  backdrop-filter: blur(2px);
   outline: 2px solid var(--text-color);
   box-shadow:0px 5px 1px rgba(16, 16, 24, 0.2), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
@@ -422,7 +418,7 @@ body {
 
     font-size: 34px;
     background: none;
-    width: 100px;
+    min-width: 100px;
     height: 50px;
     border-radius: 4px;
     margin-left: auto;
@@ -430,10 +426,20 @@ body {
     color: var(--text-color);
 }
 
+@media only screen and (min-width: 1200px){
+    .anima-date {
+        font-size: 44px;
+    }
+}
+
 .time-progress {
+    /* position: absolute; */
+    justify-content: center;
+    align-items: center;
+
     background: conic-gradient(var(--main-text-color) 10deg, rgba(255, 255, 255, 0.5) 0deg);
-    width: 65px;
-    height: 65px;
+    min-width: 68px;
+    height: 68px;
     border-radius: 50%;
 }
 
@@ -462,11 +468,17 @@ body {
 
     font-size: 34px;
     background: none;
-    width: 100px;
+    min-width: 100px;
     height: 50px;
     border-radius: 4px;
     margin-left: auto;
     margin-right: auto;
+}
+
+@media only screen and (min-width: 1200px){
+    .anima-year {
+        font-size: 44px;
+    }
 }
 
 .anima-title {
@@ -517,7 +529,7 @@ body {
 
 .oil-container, .watercolor-container,
 .digital-container, .mix-container {
-    width: 300px;
+    min-width: 300px;
     display: flex;
     padding-bottom: 30px;
     flex-direction: column;
@@ -533,7 +545,7 @@ body {
 @media only screen and (min-width: 768px){
     .oil-container, .watercolor-container,
     .digital-container, .mix-container {
-        width: 300px;
+        width: 350px;
         display: flex;
         padding-bottom: 30px;
         flex-direction: column;
