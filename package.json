@@ -2,15 +2,17 @@
   "dependencies": {
     "hotkeys-js": "^3.11.2",
     "joi": "^17.9.2",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "parcel-bundler": "^1.12.5"
   },
   "name": "vomgall",
   "description": "Site about my art life",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
@@ -21,5 +23,6 @@
   "bugs": {
     "url": "https://github.com/DmShko/vomgall/issues"
   },
-  "homepage": "https://github.com/DmShko/vomgall#readme"
+  "homepage": "https://DmShko.github.io/https://github.com/DmShko/vomgall",
+  "devDependencies": {}
 }

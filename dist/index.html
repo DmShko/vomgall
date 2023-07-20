@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vombatgallery</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=DM+Sans:wght@400;700&family=Open+Sans:wght@300;400&family=Raleway:wght@800&display=swap" rel="stylesheet">
+    <!--Normalize styles fo different browsers-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.min.css">
+
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="/fe4aeb7ba4bfe5050b46d913b61e60ae.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="page-header" change-color="">
+        <div class="header-container container" change-border="">
+            <nav class="page-nav">
+                <a class="page-logo link" href="/index.html" hover-focus="">VomGall</a>
+                <ul class="nav-list-one list">
+                    <li class="nav-one-item">
+                        <a class="nav-list-one-link link" href="#oil-block" oil-focus="">Oil</a>
+                    </li>
+
+                    <li class="nav-one-item">
+                        <a class="nav-list-one-link link" href="#watercolor-block" watercolor-focus="">Watercolor</a>
+                    </li>
+
+                    <li class="nav-one-item">
+                        <a class="nav-list-one-link link" href="#digital-block" digital-focus="">Digital</a>
+                    </li>
+
+                    <li class="nav-one-item">
+                        <a class="nav-list-one-link link" href="#mix-block" mix-focus="">Mix</a>
+                    </li>
+                </ul>
+
+                <ul class="nav-list-two list">
+                    <li class="nav-two-item">
+                        <a class="nav-list-two-link link" href="#" about-focus="" data-modal-about-open="">About</a>
+                    </li>
+                    <li class="nav-two-item">
+                        <a class="nav-list-two-link link" href="#" contacts-focus="" data-modal-contacts-open="">Contacts</a>
+                    </li>
+                </ul>
+            </nav> 
+
+            <address class="address">
+                <a class="address-link link" href="" address-focus="">vomgall@gmail.com</a>
+            </address> 
+            <button class="menu-button button js-open-menu" aria-expanded="false" aria-controls="mobile-menu" menu-button-focus="">
+                <svg class="menu-button-icon" width="22" height="22">
+                    <use href="/da7353a71f9d53ebccb142272d421eb7.svg#icon-menu-icon"></use>
+                  </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="main">
+        <div class="all-container">
+
+            <!-- go up button -->
+            <button class="index-up" type="button">Up</button>
+
+            <!-- Date lightbox -->
+            <section class="section container">
+                <h1 class="anima-title">TODAY</h1>
+                <div class="anima-element">
+                    <div class="anima-date">
+                        <p class="anima-date-text"></p>
+                    </div>
+                    <div class="time-progress">
+                        
+                    </div>
+                    <div class="anima-time">
+                        <p class="anima-time-text"></p>
+                    </div>
+                    <div class="anima-year">
+                        <p class="anima-year-text"></p>
+                    </div>
+                </div> 
+            </section>
+            
+            <!-- Hero -->
+            <section class="section">
+                <h2 class="hero-title">My hobby</h2>
+                <div class="container hero-container">
+                    <p class="hero-text">
+                        I want to tell you about my art hobby on this page. I'm not a professional painter. But I constantly want to develop and I dream that I will achieve good results. You can leave a comments in 'Leave a review' section. Have a nice day! And thank all!
+                    </p>
+                </div>
+            </section>
+
+            <!-- Art -->
+            <section class="section">
+                <div class="art-container container">
+                    <!-- Oil -->
+                    <div class="container oil-container">
+                        <h2 class="oil-title" id="oil-block">Oil painter</h2>
+                        <a class="oil-link link" href="/9fbfcd4f9982347b11c73a0f5744dee1.html" lock-about-oil=""></a>
+                    </div>
+            
+                    <!-- Watercolor -->
+                    <div class="container watercolor-container">
+                        <h2 class="watercolor-title" id="watercolor-block">Watercolor painter</h2>
+                        <a class="watercolor-link link" href="/1e95da0e144fec9bca1346f6c3679fdf.html" lock-about-watercolor=""></a>
+                    </div>
+        
+                    <!-- Digital -->
+                    <div class="container digital-container">
+                        <h2 class="digital-title" id="digital-block">Digital painter</h2> 
+                        <a class="digital-link link" href="/fb951916a50c8c75a8b930e922d37dcd.html"></a>
+                    </div>
+        
+                    <!-- Mix -->
+                    <div class="container mix-container">
+                        <h2 class="mix-title" id="mix-block">Mix</h2>
+                        <a class="mix-link link" href="/4c13fb22b0419b2b1ae87bccb51f4a08.html"></a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Leave a review -->
+            <section class="section">
+                <h2 class="review-title">Leave a review</h2>
+
+                <div class="container review-container">  
+                    <form class="review-form" action="">
+                        <input class="review-input" name="user" type="User name" placeholder="Your name" maxlength="20">
+                        <textarea class="review-textarea" name="comment" id="user-comment" maxlength="300" placeholder="Enter feedback here"></textarea>  
+                        <button class="review-send-button" type="submit">Send</button>
+                        <div class="review-text">
+
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </div>
+
+        <!-- admin instruments -->
+        <div class="admin-panel">
+            <input class="admin-panel-input" type="text">
+
+            <button class="admin-delete-user" type="button">
+                Clear UsCm
+            </button>
+
+            <button class="admin-delete-all" type="button">
+                Clear All
+            </button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="container footer-container">
+            <img class="footer-img" src="/59b514174bffe4ae402b3d63aad79fe0." alt="">
+            <p class="footer-text">&copy; by Dmytro Shevchenko</p>
+            <a class="footer-link link" href=""></a>
+        </div>
+    </footer>
+
+    <!-- backdrop -->
+    <div class="backdrop is-hidden" data-modal="">
+        <div class="modal">
+            <button class="backdrop-close" type="button" data-modal-close="">
+                <svg class="close-icon" width="12px" height="12px">
+                  <use href="/da7353a71f9d53ebccb142272d421eb7.svg#icon-close-modal-menu"></use>
+                </svg> 
+            </button>
+            <div class="modal-container is-about" about-content-is-hidden="">
+                <h2 class="modal-title">About
+                <div class="modal-card">
+                       
+                    <p class="modal-text"> <img class="modal-img img-block" srcset="/b26c89b44f4261d2aa9ea3139efee68e.jpg 195w,/b26c89b44f4261d2aa9ea3139efee68e.jpg 390w" sizes="(min-width: 1158px) 195w, (min-width: 768px) 195w, (min-width: 428px) 195w, 100vw" src="/0804f08ef86db10dc53f3058b61afe8f." alt="UI Designer Daniel Wilson" height="260" width="264">Hello! My name is Dmitry. I have many hobbies, including painting. 
+                        Since childhood, I dreamed of learning to draw professionally, because
+                         I knew that then I would be happy. That's exactly what happens. 
+                         I could not become an artist at the level of famous masters. 
+                         However, I am happy when I do it again and again. 
+                         I sincerely thank the artist Olga Vlasova, who at a certain stage helped to improve my technical level. </p>
+                </div>
+            </h2></div>   
+            
+            <div class="modal-container is-contacts" contacts-content-is-hidden="">
+                <h2 class="modal-title">Contacts
+                <div class="modal-card">
+                    <p>Email: vomgall@gmail.com <br>dimavombat32@gmail.com</p>
+                </div>       
+            </h2></div>    
+        </div>
+    </div>
+
+    <!-- backdrop admin mode-->
+    <div class="admin-mode is-hidden">
+        <form class="admin-form" action="">
+            <input class="admin-password" type="text">
+        </form>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="menu-container js-menu-container" id="mobile-menu">
+        <nav class="mobile-page-nav">
+            <ul class="mobile-nav-list-one list">
+                <li class="mobile-nav-one-item">
+                    <a class="mobile-nav-list-one-link link" href="#oil-block" oil-focus="">Oil</a>
+                </li>
+
+                <li class="mobile-nav-one-item">
+                    <a class="mobile-nav-list-one-link link" href="#watercolor-block" watercolor-focus="">Watercolor</a>
+                </li>
+
+                <li class="mobile-nav-one-item">
+                    <a class="mobile-nav-list-one-link link" href="#digital-block" digital-focus="">Digital</a>
+                </li>
+
+                <li class="mobile-nav-one-item">
+                    <a class="mobile-nav-list-one-link link" href="#mix-block" mix-focus="">Mix</a>
+                </li>
+            </ul>
+
+            <ul class="mobile-nav-list-two list">
+                <li class="mobile-nav-two-item">
+                    <a class="mobile-nav-list-two-link link" href="" about-focus="">About</a>
+                </li>
+                <li class="mobile-nav-two-item">
+                    <a class="mobile-nav-list-two-link link" href="" contacts-focus="">Contacts</a>
+                </li>
+            </ul>
+        </nav> 
+
+        <address class="mobile-address">
+            <a class="mobile-address-link link" href="" address-focus="">vomgall@gmail.com</a>
+        </address> 
+    </div>
+
+    
+    <script src="/9e55b873f10149dddc56cc2846d57d71.js"></script>
+    <script src="/84a26c83bfaa36b0a3e8d322930144dc.js"></script>
+    <script type="module" src="/77ab163850ef0fa98d6a9ee9fb6bbcaf.js"></script>
+    <script defer="" src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js" integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA==" crossorigin="anonymous"></script>
+    <script defer="" src="/b01c88f02cd73b14da29581402d75e0a.js"></script>
+    <script defer="" src="/452a8aa82569876ba89deba84331011c.js"></script>
+    <script type="module" defer="" src="/8c9fcec15d58df6cede0d7c2bb09183e.js"></script>
+</body>
+</html>
